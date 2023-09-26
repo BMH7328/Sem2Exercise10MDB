@@ -18,7 +18,9 @@ router.get("/", async (req, res) => {
     if (status) {
       filter.status = status;
     }
-    res.status(200).send(await Order.find(filter).populate("products"));
+    res
+      .status(200)
+      .send(await Order.find(filter).populate("products").sort({ _id: -1 }));
   } catch (error) {
     res.status(400).send({ message: "Order not found" });
   }
