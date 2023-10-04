@@ -60,8 +60,8 @@ router.post("/", async (req, res) => {
         name: req.body.customerName,
         amount: parseFloat(req.body.totalPrice) * 100,
         description: req.body.description,
-        callback_url: "https://c9pm7j.csb.app/verify-payment",
-        redirect_url: "https://c9pm7j.csb.app/verify-payment",
+        callback_url: "http://localhost:3000/verify-payment",
+        redirect_url: "http://localhost:3000/verify-payment",
       },
     });
     // create order in database
